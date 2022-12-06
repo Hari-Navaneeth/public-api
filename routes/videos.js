@@ -2,11 +2,10 @@ require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 
-const ACCESS_KEY = "AKIAZDJDPQPDP32TB6KK";
-const ACCESS_SECRET = "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";
-const REGION = "ap-south-1";
-// const BUCKET = 's3-nodejs-video';
-const BUCKET = "s3-nodejs-competition";
+const ACCESS_KEY = process.env.ACCESS_KEY;
+const ACCESS_SECRET = process.env.ACCESS_SECRET;
+const REGION = process.env.REGION;
+const BUCKET = process.env.BUCKET;
 
 const aws = require("aws-sdk");
 const multer = require("multer");
