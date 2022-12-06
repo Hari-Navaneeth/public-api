@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const port = process.env.PORT;
@@ -10,9 +11,10 @@ mongoose.set("debug", true);
 app.use(cors({ allowedHeaders: "*", methods: "*", origin: "*" }));
 app.use(express.json());
 app.use("/", routes);
-
-app.listen(port, async () => {
-  await setup();
-  console.log("server started at", port);
+Promise.all([setup()]).then(() => {
+  app.listen(port, async () => {
+    console.log("server started at", port);
+  });
 });
+
 module.exports = app;
