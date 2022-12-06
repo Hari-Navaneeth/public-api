@@ -2,7 +2,7 @@ async function start() {
   const express = require("express");
   const cors = require("cors");
   // const port = process.env.PORT || 8080;
-  const port = 3000;
+  const port = 443;
   const routes = require("./routes");
   const mongoose = require("mongoose");
   const { setup } = require("./test/utils");
